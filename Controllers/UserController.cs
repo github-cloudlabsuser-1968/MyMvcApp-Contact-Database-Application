@@ -138,4 +138,19 @@ public class UserController : Controller
             return View();
         }
     }
+
+    // GET: User/FindByName
+    public ActionResult FindByName(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            return View("Index", userlist);
+        }
+
+        var users = userlist
+            .Where(u => u.Name != null && u.Name.Contains(name, StringComparison.OrdinalIgnoreCase))
+            .ToList();
+
+        return View("Index", users);
+    }
 }

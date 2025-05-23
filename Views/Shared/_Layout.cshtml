@@ -25,6 +25,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <form class="d-flex" asp-controller="User" asp-action="FindByName" method="get" style="margin-left:10px;">
+                                <input class="form-control me-2" type="search" name="name" placeholder="Find by name" aria-label="Find by name" />
+                                <button class="btn btn-outline-success" type="submit">Find</button>
+                            </form>
+                        </li>
                     </ul>
                 </div>
             </div>
